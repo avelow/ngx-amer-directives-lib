@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "directives-lib": {
+      "root": "projects/directives-lib",
+      "sourceRoot": "projects/directives-lib/src",
+      "projectType": "library",
+      "prefix": "amer",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/directives-lib/tsconfig.lib.json",
+            "project": "projects/directives-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/directives-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/directives-lib/src/test.ts",
+            "tsConfig": "projects/directives-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/directives-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/directives-lib/tsconfig.lib.json",
+              "projects/directives-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "directives-lib-app"
