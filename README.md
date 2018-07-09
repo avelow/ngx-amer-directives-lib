@@ -10,3 +10,4 @@ npm install ngx-amer-directives-lib
 
 - A demo app with unit tests
 - Write a better readme.md
+- Add licence
